@@ -1,0 +1,24 @@
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'ms_paraphrase/version'
+
+Gem::Specification.new do |spec|
+  spec.name          = "ms_paraphrase"
+  spec.version       = MsParaphrase::VERSION
+  spec.authors       = ["Martin Tuncaydin"]
+  spec.email         = ["martin.tuncaydin@flightjumpr.com"]
+  spec.summary       = %q{Wrapper for the microsoft Paraphrase API.}
+  spec.description   = %q{Provides a connectivity wrapper around the microsoft Paraphrase API. Token management and paraphrasing of sentences.}
+  spec.homepage      = ""
+  spec.license       = "MIT"
+
+  spec.files         = `git ls-files`.split($/)
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
+
+  spec.add_development_dependency "bundler", "~> 1.5"
+  spec.add_development_dependency "rake"
+
+end
