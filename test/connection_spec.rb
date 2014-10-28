@@ -12,6 +12,9 @@ describe 'Connectivity to translation API' do
       config.client_secret = 'N1bGd+G03SWwz0rXdpbCQ5rL3as/3H0IqfRO39sql7A='
       config.scope = 'http://api.microsofttranslator.com'
       config.grant_type = 'client_credentials'
+
+      #Configure token manager
+      MsParaphrase.configure_token_manager
     end
   end
 
@@ -27,9 +30,6 @@ describe 'Connectivity to translation API' do
   end
 
   describe 'token manager tests' do
-    before(:all) do
-      MsParaphrase.configure_token_manager
-    end
 
     it "module should return saved or created token" do
       expect(MsParaphrase.token_manager.get_token).to_not be_nil
@@ -57,7 +57,7 @@ describe 'Connectivity to translation API' do
       MsParaphrase.translator.translate(s)
       expect(MsParaphrase.translator.result.values.include?('em')).equal? true
       expect(MsParaphrase.translator.result['em']).equal? "OK"
-      expect(MsParaphrase.translator.result['paraphrase']).is_a? Array
+      expect(MsParaphrase.translator.result['paraphrases']).is_a? Array
     end
 
   end
