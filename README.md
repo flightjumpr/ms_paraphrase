@@ -26,29 +26,33 @@ Register your application with <a href="https://datamarket.azure.com/developer/a
 
 The best way to configure the module is to add an initializer in config called ms_paraphrase.rb and add the following :
 
-MsParaphrase.configure do |config|
-      config.token_api = 'https://datamarket.accesscontrol.windows.net/v2/OAuth2-13'
-      config.paraphrase_api = 'http://api.microsofttranslator.com/v3/json/paraphrase'
-      config.client_id = 'XXXXXXXXXXX'
-      config.client_secret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-      config.scope = 'http://api.microsofttranslator.com'
-      config.grant_type = 'client_credentials'
+    MsParaphrase.configure do |config|
+          config.token_api = 'https://datamarket.accesscontrol.windows.net/v2/OAuth2-13'
+          config.paraphrase_api = 'http://api.microsofttranslator.com/v3/json/paraphrase'
+          config.client_id = 'XXXXXXXXXXX'
+          config.client_secret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+          config.scope = 'http://api.microsofttranslator.com'
+          config.grant_type = 'client_credentials'
 
-      #Configure token manager
-      MsParaphrase.configure_token_manager
-end
+          #Configure token manager
+          MsParaphrase.configure_token_manager
+    end
 
 
 ##Paraphrasing
 
-s = "This is a sentence that we are going to run through the microsoft Paraphrase API"
-MsParaphrase.translator.translate(s)
+    s = "This is a sentence that we are going to run through the microsoft Paraphrase API"
+    MsParaphrase.translator.translate(s)
 
 Response object will be json :
 
-Error message can be found by accessing : MsParaphrase.translator.result['em']
+Error message can be found by accessing :
 
-Array of results can be found by accessing : MsParaphrase.translator.result['paraphrases']
+    MsParaphrase.translator.result['em']
+
+Array of results can be found by accessing :
+
+    MsParaphrase.translator.result['paraphrases']
 
 
 ## Contributing
