@@ -16,15 +16,13 @@ Or install it yourself as:
 
     $ gem install ms_paraphrase
 
-## Usage
-
-API access :
+## Access
 
 Subscribe to the Microsoft Translator API <a href="http://go.microsoft.com/?linkid=9782667">here.</a>
 
 Register your application with <a href="https://datamarket.azure.com/developer/applications/">Azure DataMarket</a>.
 
-Configuration :
+##Configuration
 
 The best way to configure the module is to add an initializer in config called ms_paraphrase.rb and add the following :
 
@@ -41,7 +39,7 @@ MsParaphrase.configure do |config|
 end
 
 
-Paraphrasing
+##Paraphrasing
 
 s = "This is a sentence that we are going to run through the microsoft Paraphrase API"
 MsParaphrase.translator.translate(s)
@@ -53,10 +51,9 @@ Error message can be found by accessing : MsParaphrase.translator.result['em']
 Array of results can be found by accessing : MsParaphrase.translator.result['paraphrases']
 
 
-
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/ms_paraphrase/fork )
+1. Fork it ( http://github.com/flightjumpr/ms_paraphrase/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
